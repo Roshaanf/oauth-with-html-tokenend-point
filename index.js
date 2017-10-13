@@ -25,6 +25,10 @@ app.post("/token", function (req, res, next) {
     var refresh_token;
 
     console.log("reached")
+    console.log('client_id',client_id)
+    console.log('grant_type',grant_type)
+    console.log('ACCESS_TOKEN',client_id)
+    console.log('client_secret',client_secret)
     if (grant_type == 'authorization_code') {
         code = req.query.code
         console.log('code',code)
@@ -38,7 +42,7 @@ app.post("/token", function (req, res, next) {
     }
     else {
         refresh_token = req.query.refresh_token;
-
+            console.log("refresh ",ACCESS_TOKEN+SECONDS_TO_EXPIRATION)
         return res.json({
 
             token_type: "bearer",
