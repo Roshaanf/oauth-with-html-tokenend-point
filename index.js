@@ -24,8 +24,10 @@ app.post("/token", function (req, res, next) {
     var code;
     var refresh_token;
 
+    console.log("reached")
     if (grant_type == 'authorization_code') {
         code = req.query.code
+        console.log('code',code)
 
         return res.json({
             token_type: "bearer",
