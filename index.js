@@ -5,8 +5,8 @@ var app = express();
 
 
 
-client_id = GOOGLE_CLIENT_ID & client_secret=GOOGLE_CLIENT_SECRET & grant_type=authorization_code & code=AUTHORIZATION_CODE
-client_id = GOOGLE_CLIENT_ID & client_secret=GOOGLE_CLIENT_SECRET & grant_type=refresh_token & refresh_token=REFRESH_TOKEN
+// client_id = GOOGLE_CLIENT_ID & client_secret=GOOGLE_CLIENT_SECRET & grant_type=authorization_code & code=AUTHORIZATION_CODE
+// client_id = GOOGLE_CLIENT_ID & client_secret=GOOGLE_CLIENT_SECRET & grant_type=refresh_token & refresh_token=REFRESH_TOKEN
 
 app.post("/token", function (req, res, next) {
     console.log("req.query: ", req.query);
