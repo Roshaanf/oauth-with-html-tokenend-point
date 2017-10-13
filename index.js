@@ -15,23 +15,23 @@ app.use(bodyParser.json());
 
 app.post("/token", function (req, res, next) {
     console.log("req.query: ", req.query);
-    var client_id = req.query.client_id
-    var client_secret = req.query.client_secret
-    var grant_type = req.query.grant_type
+    var client_id = req.body.client_id
+    var client_secret = req.body.client_secret
+    var grant_type = req.body.grant_type
     var ACCESS_TOKEN = "bbcc"
     var REFRESH_TOKEN = "refresh"
     var SECONDS_TO_EXPIRATION = 30;
     var code;
     var refresh_token;
 
-    console.log('req.query',req.query)
+    console.log('req.query',req.body)
     console.log("reached")
     console.log('client_id',client_id)
     console.log('grant_type',grant_type)
     console.log('ACCESS_TOKEN',client_id)
     console.log('client_secret',client_secret)
     if (grant_type == 'authorization_code') {
-        code = req.query.code
+        code = req.body.code
         console.log('code',code)
 
         return res.json({
@@ -42,7 +42,7 @@ app.post("/token", function (req, res, next) {
         });
     }
     else {
-        refresh_token = req.query.refresh_token;
+        refresh_token = req.body.refresh_token;
             console.log("refresh ",ACCESS_TOKEN+SECONDS_TO_EXPIRATION)
         return res.json({
 
