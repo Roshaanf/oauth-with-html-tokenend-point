@@ -24,6 +24,7 @@ app.post("/token", function (req, res, next) {
     var code;
     var refresh_token;
 
+    console.log('req.query',req.query)
     console.log("reached")
     console.log('client_id',client_id)
     console.log('grant_type',grant_type)
